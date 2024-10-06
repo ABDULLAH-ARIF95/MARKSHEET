@@ -23,17 +23,31 @@ function toGrade(num){
        return gradeCol4.innerText = "-"  
    }
 }
-
+function scholarship(perc){
+    if(perc >=90){
+       return " 30%"
+    }
+    else if(perc>=80){
+       return " 20%"
+    }
+    else if(perc>=70){
+       return "10%"
+    }
+}
 var mainDiv = document.getElementById("main");
 var table = document.createElement("table");
 
 table.setAttribute("class", "table");
 table.setAttribute("cellpadding", "10");
-table.setAttribute("cellspacing", "5");
+table.setAttribute("cellspacing", "4");
 var count = 0;
 var totalMarks = 425
 var userInp = Number(prompt("Enter your Mathematics Marks \n Out of 100"))
 var calc;
+
+var scholarship1 = document.createElement("p")
+// scholarship1.innerText = "You got "+ scholarship(calc) + "discount in your fees"
+scholarship1.style.whiteSpace = "nowrap"; 
 
 for (i = 0; i < 8; i++) {
     count++
@@ -43,11 +57,12 @@ for (i = 0; i < 8; i++) {
     var tableCol2 = document.createElement("td")
     subName.innerText = "Subjects"
     tableCol1.innerText = "Total Marks"
-    tableCol2.innerText = "UserMarks"
+    tableCol2.innerText = "Obtained Marks"
     tableRow.appendChild(subName)
     tableRow.appendChild(tableCol1)
     tableRow.appendChild(tableCol2)
     table.appendChild(tableRow)
+    table.appendChild(scholarship1)
     if(count===1){
         tableCol1.setAttribute("class","col1")
         tableCol2.setAttribute("class","col1")
@@ -89,7 +104,7 @@ for (i = 0; i < 8; i++) {
     }
     else if(count===7){
         subName.innerText = "Total Marks"
-        tableCol1.innerText = "Obtaied Marks"
+        tableCol1.innerText = "Obtained Marks"
         tableCol2.innerText = "Status"
         tableCol1.setAttribute("class","col1")
         tableCol2.setAttribute("class","col1")
@@ -135,7 +150,8 @@ perCol2.innerText = "Percentage"
 perCol2.setAttribute("class","forClass")
 perCol4.innerText = percentage()
 
-    //for grade
+
+
 
 
 gradeRow1.appendChild(gradeCol1)
@@ -150,5 +166,5 @@ perRow1.appendChild(perCol3)
 perRow1.appendChild(perCol4)
 
 grade.appendChild(perRow1)
+// grade.appendChild(scholarship)
 mainDiv.appendChild(grade);
-mainDiv.appendChild(grade)
