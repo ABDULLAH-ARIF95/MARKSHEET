@@ -1,3 +1,29 @@
+function percentage() {
+    calc = (obtainedMarks *100)/totalMarks
+   calc =calc.toFixed(2)
+   return calc
+}
+function toGrade(num){
+   if (num>=90) {
+      return gradeCol4.innerText = "A1"
+   }
+   else if(num>=70){
+       return gradeCol4.innerText = "A"
+   }
+   else if(num>=50){
+       return gradeCol4.innerText = "B"
+   }
+   else if(num>=40){
+       return gradeCol4.innerText = "C"
+   }
+   else if(num>=30){
+       return gradeCol4.innerText = "D"  
+   }
+   else{
+       return gradeCol4.innerText = "-"  
+   }
+}
+
 var mainDiv = document.getElementById("main");
 var table = document.createElement("table");
 
@@ -8,11 +34,6 @@ var count = 0;
 var totalMarks = 425
 var userInp = Number(prompt("Enter your Mathematics Marks \n Out of 100"))
 var calc;
-function percentage() {
-     calc = (obtainedMarks *100)/totalMarks
-    calc =calc.toFixed(2)
-    return calc
-}
 
 for (i = 0; i < 8; i++) {
     count++
@@ -102,7 +123,7 @@ var gradeCol4 = document.createElement("td")
 gradeCol1.innerText = ""
 gradeCol2.innerText = "Grade"
 gradeCol2.setAttribute("class","forClass")
-gradeCol4.innerText = "A"
+gradeCol4.innerText = toGrade(calc)
 var perRow1 = document.createElement("tr")
 var perCol1 = document.createElement("td")
 perCol1.setAttribute("width","15")
@@ -115,24 +136,7 @@ perCol2.setAttribute("class","forClass")
 perCol4.innerText = percentage()
 
     //for grade
-if (calc>=90) {
-    gradeCol4.innerText = "A1"
-}
-else if(calc>=70){
-    gradeCol4.innerText = "A"
-}
-else if(calc>=50){
-    gradeCol4.innerText = "B"
-}
-else if(calc>=40){
-    gradeCol4.innerText = "C"
-}
-else if(calc>=30){
-    gradeCol4.innerText = "D"  
-}
-else{
-    gradeCol4.innerText = "-"  
-}
+
 
 gradeRow1.appendChild(gradeCol1)
 gradeRow1.appendChild(gradeCol2)
