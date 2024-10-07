@@ -163,6 +163,6 @@ scholRow.appendChild(scholCol2);
 scholRow.appendChild(scholCol3);
 scholRow.appendChild(scholCol4);
 
-
 grade.appendChild(scholRow);
+
 mainDiv.appendChild(grade);

@@ -44,13 +44,33 @@
     border-left: 5px solid #3498db;
   }
 
+  .table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .table th, td {
+    border: 1px solid black; 
+    padding: 8px;
+  }
+  
+  
+  .grade{
+    border-collapse: collapse;
+  }
+  .grade th, .grade td{
+    border: none; 
+
+  }
+
 .table td {
     padding: 10px; 
     line-height: 1.5; 
   }
-  
+  .table tr{
+    text-align: center;
+  }
   .table td[colspan="3"] {
-    text-align: center; 
     font-weight: normal;
     font-size: 1em; 
   }
